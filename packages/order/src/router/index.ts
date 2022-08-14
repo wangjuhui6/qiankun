@@ -1,5 +1,7 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
 import HomeView from "../views/HomeView.vue";
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const APP_NAME = require("../../package.json").name;
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -19,7 +21,8 @@ const routes: Array<RouteRecordRaw> = [
 ];
 
 const router = createRouter({
-  history: createWebHistory(process.env.BASE_URL),
+  history: createWebHistory(`/${APP_NAME}/`),
+  // history: createWebHistory(process.env.BASE_URL),
   routes,
 });
 
