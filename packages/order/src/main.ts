@@ -4,10 +4,11 @@ import router from "./router";
 import store from "./store";
 import "./public-path";
 
-const app = createApp(App);
+let app: any;
 
 function render(props: any) {
   const { container } = props;
+  app = createApp(App);
   app
     .use(store)
     .use(router)
@@ -40,4 +41,5 @@ export async function mount(props: any) {
 export async function unmount() {
   console.log("unmount");
   app.unmount();
+  app = null;
 }
