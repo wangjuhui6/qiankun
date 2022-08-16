@@ -52,6 +52,7 @@
 .w800{width:800px}
 .w{width:100%}
 .h50{height:50px}
+.h60{height:60px}
 .h80{height:80px}
 .h100{height:100px}
 .h200{height:200px}
@@ -117,3 +118,8 @@
 .pr30{padding-right:30px}
 .pr50{padding-right:50px}
 .pr100{padding-right:100px}
+
+/*flex*/
+.flex{display: flex}
+.items-center{align-items: center;}
+.content-center{justify-content: center;}

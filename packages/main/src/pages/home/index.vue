@@ -1,7 +1,6 @@
 <template>
   <div>
     <h1>我是首页</h1>
-    <a href="javascript:;" @click="go('order')">订单</a>
   </div>
 </template>
 

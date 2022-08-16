@@ -1,6 +1,5 @@
 <template>
   <div>
-    111
     <div id="miniContainer"></div>
   </div>
 </template>

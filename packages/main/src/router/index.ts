@@ -6,6 +6,28 @@ const microApps = [
     name: "order",
     path: "/order:afterUser(.*)",
     component: () => import("@/pages/mini/index.vue"),
+    meta: {
+      name: "订单",
+    },
+    // 子项目二级只是为了侧边栏展示使用，无实际用途
+    children: [
+      {
+        name: "order",
+        path: "/order",
+        component: () => import("@/pages/mini/index.vue"),
+        meta: {
+          name: "订单",
+        },
+      },
+      {
+        name: "order-list",
+        path: "/order/list",
+        component: () => import("@/pages/mini/index.vue"),
+        meta: {
+          name: "订单列表",
+        },
+      },
+    ],
     app: {
       name: "order",
       entry: "//localhost:9001/",
@@ -65,6 +87,9 @@ export const layoutList: Array<RouteRecordRaw> = [
     path: "/",
     name: "home",
     component: () => import("@/pages/home/index.vue"),
+    meta: {
+      name: "首页",
+    },
   },
   ...microApps,
 ];
