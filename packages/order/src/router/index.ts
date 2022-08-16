@@ -1,27 +1,28 @@
-import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
-import HomeView from "../views/HomeView.vue";
+import { createRouter, createWebHashHistory, RouteRecordRaw } from "vue-router";
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const APP_NAME = require("../../package.json").name;
 
 const routes: Array<RouteRecordRaw> = [
   {
-    path: "/",
+    path: `/${APP_NAME}`,
     name: "home",
-    component: HomeView,
-  },
-  {
-    path: "/about",
-    name: "about",
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () =>
-      import(/* webpackChunkName: "about" */ "../views/AboutView.vue"),
+    children: [
+      {
+        path: "",
+        name: "home",
+        component: () => import("@/pages/home/index.vue"),
+      },
+      {
+        path: "list",
+        name: "list",
+        component: () => import("@/pages/list/index.vue"),
+      },
+    ],
   },
 ];
 
 const router = createRouter({
-  history: createWebHistory(`/${APP_NAME}/`),
+  history: createWebHashHistory(),
   // history: createWebHistory(process.env.BASE_URL),
   routes,
 });

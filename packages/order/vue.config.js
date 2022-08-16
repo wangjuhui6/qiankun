@@ -3,6 +3,7 @@ const { name } = require("./package");
 
 module.exports = defineConfig({
   transpileDependencies: true,
+  publicPath: "./",
   devServer: {
     port: 9001,
     headers: {
