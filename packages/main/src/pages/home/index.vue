@@ -4,14 +4,6 @@
   </div>
 </template>
 
-<script setup lang="ts">
-import { useRouter } from "vue-router";
-
-const router = useRouter();
-
-function go(url: string) {
-  router.push(url);
-}
-</script>
+<script setup lang="ts"></script>
 
 <style lang="less" scoped></style>
