@@ -6,6 +6,7 @@ const pathResolve = pathUrl => path.join(__dirname, pathUrl)
 module.exports = {
   webpack: (config) => {
     config.output.library = `${name}-[name]`;
+    config.output.publicPath = `./`;
     config.output.libraryTarget = 'umd';
     // config.output.jsonpFunction = `webpackJsonp_${name}`;
     config.output.globalObject = 'window';
