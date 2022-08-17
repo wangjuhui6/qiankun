@@ -37,6 +37,22 @@ const microApps = [
       },
     },
   },
+  {
+    name: "goods",
+    path: "/goods:afterUser(.*)",
+    component: () => import("@/pages/mini/index.vue"),
+    meta: {
+      name: "商品",
+    },
+    app: {
+      name: "goods",
+      entry: "//localhost:9003/",
+      container: "#miniContainer",
+      activeRule: (e: { hash: string }) => {
+        return e.hash.startsWith("#/goods");
+      },
+    },
+  },
 ];
 
 registerMicroApps(

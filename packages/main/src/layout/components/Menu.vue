@@ -62,7 +62,7 @@ const props = defineProps({
 const router = useRouter();
 
 function go(data: { path: string }) {
-  router.push(data.path);
+  router.push(data.path.split(":afterUser(.*)")[0]);
 }
 </script>
 
